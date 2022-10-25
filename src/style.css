@@ -13,8 +13,9 @@ a::after {
 
 
 @media (prefers-color-scheme: dark) {
-  html {
+  html, button {
     color: rgb(237, 232, 218);
+    border-color: rgb(237, 232, 218);
     background: rgb(12, 11, 43);
   }
   a {
@@ -25,8 +26,15 @@ a::after {
 html {
   font-size: 16.5px;
   font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3 {
   font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0;
+}
+
+ul {
+  margin-bottom: 2em;
 }

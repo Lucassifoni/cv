@@ -176,7 +176,7 @@ export const data = {
             }
         ],
         tech: {
-            current_stack: `Ma stack usuelle dans un cadre professionnel est la suivante à ce jour :`,
+            current_stack: `Ma stack dans un cadre pro est actuellement :`,
             stack: [
                 `Backend, domaine métier : Elixir (+ Phoenix)`,
                 `Frontend & UIs : Typescript (+ Vue.js)`,
@@ -184,7 +184,7 @@ export const data = {
                 `CI/CD : Github Actions ou Gitlab CI + Docker`,
                 `Infra : VPSs debian`,
             ],
-            desired_stack: `Projets personnels, apprentissage :`,
+            desired_stack: `En apprentissage :`,
             desired_stack_items: [
                 `Haskell (ouvert à l'utiliser quotidiennement)`,
                 `Elm (DX excellente)`,
@@ -376,7 +376,7 @@ export const data = {
                 `CI/CD : Github Actions / Gitlab CI + Docker`,
                 `Infra : VPSs debian`,
             ],
-            desired_stack: `Personal projects, learning :`,
+            desired_stack: `Currently learning :`,
             desired_stack_items: [
                 `Haskell (would love to use it more)`,
                 `Elm (Excellent DX)`,
