@@ -236,7 +236,7 @@ onMounted(() => {
         background: chocolate;
       }
 
-      &.iot {
+      &.iot, &.typescript {
         background: lightblue;
       }
 
@@ -251,7 +251,7 @@ onMounted(() => {
       }
 
       &.w2p,
-      &.etl {
+      &.etl, &.ovo2 {
         background: rgb(128, 126, 126);
         color: white;
       }

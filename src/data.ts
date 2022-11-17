@@ -2,6 +2,8 @@ const short_tags = {
     elixir: "Elixir",
     wip: ["En cours", "WIP"],
     vue: "Vue.js",
+    typescript: 'Typescript',
+    ovo2: 'ovo2',
     maintain: ["Maintenance / Extension", "Improvements & extension"],
     w2p: ["Automatisation process", "Workflow automation"],
     kirby: "Kirby CMS",
@@ -64,6 +66,10 @@ export const data = {
         projects: [
             {
                 year: 2022, content: [
+                    {
+                        intro: `<strong>&lt;sans titre&gt;</strong>, un système no-code/low-code d'automatisation du design, permettant des documents 100% automatisés, 50% automatisés avec intervention humaine, et 100% manuels avec application de charte supervisée. <br>Tourne en partie avec <strong>ovo2</strong>, un langage de script fonctionnel et différé créé pour l'occasion de ce projet.`,
+                        tags: [tags.elixir, tags.typescript, tags.ovo2, tags.wip],
+                    },
                     {
                         intro: `<strong>AbjProxy</strong>, monitoring, indexation, proxy API, gestion à distance de fonctions web de plusieurs instances du logiciel Abelujo. `,
                         tags: [tags.elixir, tags.wip, tags.vue],
@@ -268,6 +274,10 @@ export const data = {
         projects: [
             {
                 year: 2022, content: [
+                    {
+                        intro: `<strong>&lt;to be named&gt;</strong>, a no-code/low-code design automation system providing automated documents via design APIs, semi-automated documents with human intervention, and non-automated documents with enforced design constraints.<br>Partly powered by <strong>ovo2</strong>, a homebrew lazy functional scripting language born in this project.`,
+                        tags: [tags.elixir, tags.typescript, tags.ovo2, tags.wip],
+                    },
                     {
                         intro: `<strong>AbjProxy</strong>, monitoring, indexation, API proxy, and remote-control of web tasks around Abelujo. `,
                         tags: [tags.elixir, tags.wip, tags.vue],
