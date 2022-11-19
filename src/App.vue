@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, Ref } from "vue";
 import { data } from "./data";
+import ShootingStars from "./ShootingStars.vue";
 
 const currentLang: Ref<"fr" | "en"> = ref("fr");
 
@@ -26,81 +27,87 @@ let trigger = () => {
   window.removeEventListener('touchstart', trigger);
 };
 
+const ws = ref(window.innerWidth);
+
 onMounted(() => {
   window.addEventListener('mousemove', trigger);
   window.addEventListener('touchstart', trigger);
+  window.addEventListener('resize', () => {
+    ws.value = window.innerWidth;
+  });
 });
 </script>
 
 <template>
   <div>
-  <div class="cv">
-    <h2>Lucas Sifoni</h2>
-    <header class="columns">
-      <div class="header-left">
-        <p v-html="t.intro"></p>
-      </div>
-      <div class="header-right">
-        <button class="lang-button" @click="switchLang">{{ t.other_lang }}</button>
-        <p>contact<span>{{ shownMail }}</span></p>
-      </div>
-    </header>
-    <div class="columns">
-      <main>
-        <h3 id="collabs" v-html="t.titles.collab"></h3>
-        <p>
-        <ul class="dates">
-          <li v-for="item in t.collabs">
-            {{ item.start }} &mdash; {{ item.end }} : <span v-html="item.main"></span>
-            <p class="small" v-html="item.details"></p>
-          </li>
-        </ul>
-        </p>
-
-        <h3 id="projects" v-html="t.titles.projects"></h3>
-        <p class="small" v-html="t.projects_intro"></p>
-        <div v-for="list in t.projects">
-          <h4 class="year">{{ list.year }}</h4>
-          <ul class="project-list">
-            <li v-for="project in list.content">
-              <span v-html="project.intro"></span>
-              <span class="tags">
-                <div class="tag" :class="tag.key" v-for="tag in project.tags">
-                  {{ tag.value[currentLang] }}
-                </div>
-              </span>
+    <ShootingStars :key="ws"></ShootingStars>
+    <div class="cv">
+      <h2>Lucas Sifoni</h2>
+      <header class="columns">
+        <div class="header-left">
+          <p v-html="t.intro"></p>
+        </div>
+        <div class="header-right">
+          <button class="lang-button" @click="switchLang">{{ t.other_lang }}</button>
+          <p>contact<span>{{ shownMail }}</span></p>
+        </div>
+      </header>
+      <div class="columns">
+        <main>
+          <h3 id="collabs" v-html="t.titles.collab"></h3>
+          <p>
+          <ul class="dates">
+            <li v-for="item in t.collabs">
+              {{ item.start }} &mdash; {{ item.end }} : <span v-html="item.main"></span>
+              <p class="small" v-html="item.details"></p>
             </li>
           </ul>
-        </div>
-      </main>
-      <aside>
-        <h3 id="tech" v-html="t.titles.tech"></h3>
-        <p v-html="t.tech.current_stack"></p>
-        <ul>
-          <li v-for="item in t.tech.stack" v-html="item"></li>
-        </ul>
-        <p v-html="t.tech.desired_stack"></p>
-        <ul>
-          <li v-for="item in t.tech.desired_stack_items" v-html="item"></li>
-        </ul>
-        <h3 id="formation" v-html="t.titles.form"></h3>
-        <ul class="dates">
-          <li v-for="item in t.formation">
-            {{ item.start }} &mdash; {{ item.end }} : {{ item.title }}
-            <p class="small" v-html="item.details"></p>
-          </li>
-        </ul>
-        <h3 id="oss" v-html="t.titles.oss"></h3>
-        <p v-html="t.oss.title"></p>
-        <ul>
-          <li v-for="item in t.oss.list" v-html="item"></li>
-        </ul>
-        <h3 id="stars" v-html="t.titles.stars"></h3>
-        <p v-html="t.stars"></p>
-      </aside>
+          </p>
+
+          <h3 id="projects" v-html="t.titles.projects"></h3>
+          <p class="small" v-html="t.projects_intro"></p>
+          <div v-for="list in t.projects">
+            <h4 class="year">{{ list.year }}</h4>
+            <ul class="project-list">
+              <li v-for="project in list.content">
+                <span v-html="project.intro"></span>
+                <span class="tags">
+                  <div class="tag" :class="tag.key" v-for="tag in project.tags">
+                    {{ tag.value[currentLang] }}
+                  </div>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </main>
+        <aside>
+          <h3 id="tech" v-html="t.titles.tech"></h3>
+          <p v-html="t.tech.current_stack"></p>
+          <ul>
+            <li v-for="item in t.tech.stack" v-html="item"></li>
+          </ul>
+          <p v-html="t.tech.desired_stack"></p>
+          <ul>
+            <li v-for="item in t.tech.desired_stack_items" v-html="item"></li>
+          </ul>
+          <h3 id="formation" v-html="t.titles.form"></h3>
+          <ul class="dates">
+            <li v-for="item in t.formation">
+              {{ item.start }} &mdash; {{ item.end }} : {{ item.title }}
+              <p class="small" v-html="item.details"></p>
+            </li>
+          </ul>
+          <h3 id="oss" v-html="t.titles.oss"></h3>
+          <p v-html="t.oss.title"></p>
+          <ul>
+            <li v-for="item in t.oss.list" v-html="item"></li>
+          </ul>
+          <h3 id="stars" v-html="t.titles.stars"></h3>
+          <p v-html="t.stars"></p>
+        </aside>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <style lang="scss">
@@ -111,10 +118,12 @@ onMounted(() => {
 
 .mobile-menu {
   display: none;
+
   @media screen and (max-width: 960px) {
     display: block;
   }
 }
+
 .lang-button {
   border: 1px solid;
   font-size: 1em;
@@ -206,6 +215,7 @@ onMounted(() => {
       padding: 2px 6px;
       opacity: .5;
       color: black;
+
       @media (prefers-color-scheme: dark) {
         opacity: 1;
       }
@@ -236,11 +246,13 @@ onMounted(() => {
         background: chocolate;
       }
 
-      &.iot, &.typescript {
+      &.iot,
+      &.typescript {
         background: lightblue;
       }
 
-      &.php, &.wp {
+      &.php,
+      &.wp {
         background: darkblue;
         color: white;
       }
@@ -251,7 +263,8 @@ onMounted(() => {
       }
 
       &.w2p,
-      &.etl, &.ovo2 {
+      &.etl,
+      &.ovo2 {
         background: rgb(128, 126, 126);
         color: white;
       }
@@ -272,6 +285,7 @@ onMounted(() => {
   .header-left {
     flex: 0 0 calc(100% - 40ch - 1em);
     position: relative;
+
     @media screen and (max-width: 960px) {
       flex: 0 0 100%;
       margin-left: 0;
@@ -282,6 +296,7 @@ onMounted(() => {
   .header-right {
     flex: 0 0 40ch;
     margin-left: 1rem;
+
     @media screen and (max-width: 960px) {
       flex: 0 0 100%;
       margin-left: 0;

@@ -3,25 +3,24 @@ html * {
 }
 
 
-a {
-  color: black;
-}
 a::after {
   content: "\2934";
   line-height: 1;
 }
 
 
-@media (prefers-color-scheme: dark) {
-  html, button {
-    color: rgb(237, 232, 218);
-    border-color: rgb(237, 232, 218);
-    background: rgb(12, 11, 43);
-  }
-  a {
-    color: rgb(237, 232, 218);
-  }
+
+html,
+button {
+  color: rgb(237, 232, 218);
+  border-color: rgb(237, 232, 218);
+  background: rgb(12, 11, 43);
 }
+
+a {
+  color: rgb(237, 232, 218);
+}
+
 
 html {
   font-size: 16.5px;
@@ -30,7 +29,9 @@ html {
   padding: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 0;
 }
