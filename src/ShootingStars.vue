@@ -52,7 +52,7 @@ const do_draw = () => {
     const c = ctx.value;
     const grd = c.createLinearGradient(0, 0, WIDTH, HEIGHT);
     grd.addColorStop(0, 'rgba(2,0,36,1)');
-    grd.addColorStop(0.35, 'rgba(79,79,112,1)');
+    grd.addColorStop(0.7, 'rgba(79,79,112,1)');
     grd.addColorStop(1, 'rgba(100,145,154,1)');
     c.fillStyle = grd;
     c.fillRect(0, 0, WIDTH, HEIGHT);

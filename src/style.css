@@ -39,3 +39,59 @@ h3 {
 ul {
   margin-bottom: 2em;
 }
+
+@media print {
+  canvas {
+    display: none;
+  }
+  .noprint {
+    display: none;
+  }
+  html {
+    margin: 0;
+    padding: 0;
+    width: 21cm;
+    height: 29.695cm;
+    position: relative;
+    box-shadow: 0 0 1px black;
+    color: black;
+    background: white;
+  }
+  body {
+    position: absolute;
+    left: 15mm;
+    top: 15mm;
+    right: 12mm;
+    bottom: 15mm;
+    padding: 0;
+    margin: 0;
+    color: black;
+    background: white;
+    font-size: 14px;
+  }
+  a {
+    color: black;
+  }
+  button {
+    display: none;
+  }
+  a::after {
+    display: none;
+  }
+  .cv {
+    padding: 0!important;
+  }
+  h2 {
+    margin-bottom: 0;
+  }
+  .header-right {
+    flex: 0 0 25ch!important;
+    margin-left: auto;
+  }
+  .columns {
+    flex-wrap: nowrap!important;
+  }
+  .header-left {
+    flex: auto!important;
+  }
+}

@@ -90,6 +90,8 @@ onMounted(() => {
           <ul>
             <li v-for="item in t.tech.desired_stack_items" v-html="item"></li>
           </ul>
+          <h3 id="teaching" v-html="t.teaching.title"></h3>
+          <p v-html="t.teaching.text"></p>
           <h3 id="formation" v-html="t.titles.form"></h3>
           <ul class="dates">
             <li v-for="item in t.formation">

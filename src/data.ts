@@ -28,8 +28,8 @@ export const tags = Object.entries(short_tags).reduce((out, [key, value]) => {
 
 export const data = {
     fr: {
-        intro: `Développe et gère des projets d'outils numériques en indépendant depuis 2015.<br><br>Je conçois avec mes
-          clients des sites et outils internes expressifs, efficaces et ergonomiques, visant toujours à fournir un gain de temps à leurs utilisateurs.`,
+        intro: `Développe et gère des projets d'outils numériques <span class="noprint">en indépendant</span> depuis 2015.<br><span class="noprint"><br>Je conçois avec mes
+          clients des sites et outils internes expressifs, efficaces et ergonomiques, visant toujours à fournir un gain de temps à leurs utilisateurs.</span>`,
         projects_intro: `La technique est pour beaucoup de structures un mal nécessaire.<br>Dans mes projets favoris, la
         technique simplifie des processus métier laborieux.<br>J'ai dirigé et réalisé en majorité le développement de ces projets.`,
         other_lang: 'read this page in english',
@@ -56,6 +56,7 @@ export const data = {
                 collaboration avec A. Lemarchand, L. Savignac et N. Santos, designers.`,
             },
             {
+                noprint: true,
                 start: 2015,
                 end: 'présent',
                 main: `collaborations variées`,
@@ -196,6 +197,10 @@ export const data = {
                 `Elm (DX excellente)`,
                 `Rust (interop. Elixir)`,
             ]
+        },
+        teaching: {
+            title: 'Enseignement',
+            text: 'En 2017 puis 2018, j\'anime un workshop de 40 heures auprès d\'étudiantes en design. Le cours donne les bases de HTML et CSS de manière simple et sémantique.<br>Chaque étudiante pense et code son site personnel, et le déploie via Github Pages.<br>Merci à ces deux promotions de DSAA Design pour leur implication et intérêt.'
         },
         formation: [
             {
@@ -392,6 +397,10 @@ export const data = {
                 `Elm (Excellent DX)`,
                 `Rust (nice Elixir interop.)`,
             ]
+        },
+        teaching: {
+            title: 'Teaching',
+            text: 'In 2017 and then 2018, I gave a 40h workshop to design students, teaching HTML & CSS basics with a focus on simplicity & semantics.<br>Each student learnt to think and code their personal website, how the web generally works at a high level, and how to use Github Pages to deploy it.<br>Thanks to those two student groups for their interest and energy.'
         },
         formation: [
             {
