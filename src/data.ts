@@ -193,8 +193,7 @@ export const data = {
             ],
             desired_stack: `En apprentissage :`,
             desired_stack_items: [
-                `Haskell (ouvert à l'utiliser quotidiennement)`,
-                `Elm (DX excellente)`,
+                `Haskell (ouvert à l'utiliser plus)`,
                 `Rust (interop. Elixir)`,
             ]
         },
@@ -394,7 +393,6 @@ export const data = {
             desired_stack: `Currently learning :`,
             desired_stack_items: [
                 `Haskell (would love to use it more)`,
-                `Elm (Excellent DX)`,
                 `Rust (nice Elixir interop.)`,
             ]
         },
@@ -438,6 +436,6 @@ export const data = {
             ]
         },
         stars: `Since 2019, I design & build telescopes and acquired knowledge in optics.<br>
-        Interferometry of a commercial telescope mirror, then my refigure of it : <a href="https://github.com/Lucassifoni/hyperbolic-200mm-f3.5-/">hyperbolic-200mm-f3.5- sur github</a>.`,
+        Interferometry of a commercial telescope mirror, then my refigure of it, telescope CAD and build : <a href="https://github.com/Lucassifoni/hyperbolic-200mm-f3.5-/">hyperbolic-200mm-f3.5- sur github</a>.`,
     },
 };
