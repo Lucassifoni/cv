@@ -12,13 +12,13 @@ a::after {
 
 html,
 button {
-  color: rgb(237, 232, 218);
-  border-color: rgb(237, 232, 218);
-  background: rgb(12, 11, 43);
+  color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
+  background: rgb(247, 247, 247);
 }
 
 a {
-  color: rgb(237, 232, 218);
+  color: rgb(0, 0, 0);
 }
 
 

@@ -3,7 +3,7 @@ import { computed, onMounted, ref, Ref } from "vue";
 import { data } from "./data";
 import ShootingStars from "./ShootingStars.vue";
 
-const currentLang: Ref<"fr" | "en"> = ref("fr");
+const currentLang: Ref<"fr" | "en"> = ref("en");
 
 const switchLang = () => {
   const v = currentLang.value;
@@ -32,15 +32,11 @@ const ws = ref(window.innerWidth);
 onMounted(() => {
   window.addEventListener('mousemove', trigger);
   window.addEventListener('touchstart', trigger);
-  window.addEventListener('resize', () => {
-    ws.value = window.innerWidth;
-  });
 });
 </script>
 
 <template>
   <div>
-    <ShootingStars :key="ws"></ShootingStars>
     <div class="cv">
       <h2>Lucas Sifoni</h2>
       <header class="columns">
