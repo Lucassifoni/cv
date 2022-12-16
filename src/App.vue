@@ -45,7 +45,13 @@ onMounted(() => {
         </div>
         <div class="header-right">
           <button class="lang-button" @click="switchLang">{{ t.other_lang }}</button>
-          <p>contact<span>{{ shownMail }}</span></p>
+          <p>
+            <a v-if="shownMail" :href="`mailto:contact${shownMail}`">contact<span>{{ shownMail }}</span></a>
+            <br>
+            <a v-if="shownMail" :href="`tel:33767025572`">+337.67.02.55.72</a>
+            <br>
+            <a v-if="shownMail" href="/Lucas_Sifoni_CV_english.pdf">CV (pdf)</a>
+          </p>
         </div>
       </header>
       <div class="columns">
