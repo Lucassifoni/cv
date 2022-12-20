@@ -50,7 +50,7 @@ onMounted(() => {
             <br>
             <a v-if="shownMail" :href="`tel:33767025572`">+337.67.02.55.72</a>
             <br>
-            <a v-if="shownMail" href="/Lucas_Sifoni_CV_english.pdf">CV (pdf)</a>
+            <a v-if="shownMail" href="/cv/Lucas_Sifoni_CV_english.pdf">CV (pdf)</a>
           </p>
         </div>
       </header>
